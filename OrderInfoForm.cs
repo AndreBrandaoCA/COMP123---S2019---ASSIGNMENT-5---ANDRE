@@ -33,5 +33,10 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
             Program.startForm.Show();
             this.Hide();
         }
+
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
