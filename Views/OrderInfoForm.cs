@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
+namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
 {
     public partial class OrderInfoForm : Form
     {

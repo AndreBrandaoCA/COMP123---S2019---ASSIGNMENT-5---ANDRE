@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
+namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
 {
     public partial class ProductInfoForm : Form
     {
@@ -43,6 +43,12 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void SelectAnotherProductToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Program.selectForm.Show();
+            this.Hide();
         }
     }
 }

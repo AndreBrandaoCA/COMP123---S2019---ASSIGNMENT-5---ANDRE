@@ -1,4 +1,4 @@
-﻿namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
+﻿namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
 {
     partial class OrderInfoForm
     {

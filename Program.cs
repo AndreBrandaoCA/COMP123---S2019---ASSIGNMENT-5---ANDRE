@@ -1,4 +1,6 @@
-﻿using System;
+﻿using COMP123___S2019___ASSIGNMENT_5___ANDRE.Data;
+using COMP123___S2019___ASSIGNMENT_5___ANDRE.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,8 +8,9 @@ using System.Windows.Forms;
 
 namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
 {
-    static class Program
+    public static class Program
     {
+        public static Product product;
 
         public static SplashScreen splashScreen;
         public static StartForm startForm;
@@ -23,11 +26,14 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             splashScreen = new SplashScreen();
             startForm = new StartForm();
             selectForm = new SelectForm();
+            product = new Product();
             productInfoForm = new ProductInfoForm();
             orderInfoForm = new OrderInfoForm();
+
             Application.Run(splashScreen);
         }
     }
