@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.CancelButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
-            this.ProdutDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProductDataGridView = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +67,7 @@
             this.dollarComputersDataSet = new COMP123___S2019___ASSIGNMENT_5___ANDRE.DollarComputersDataSet();
             this.ProductSelectionLable = new System.Windows.Forms.Label();
             this.productsTableAdapter = new COMP123___S2019___ASSIGNMENT_5___ANDRE.DollarComputersDataSetTableAdapters.productsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ProdutDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).BeginInit();
             this.SuspendLayout();
@@ -94,17 +94,17 @@
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
-            // ProdutDataGridView
+            // ProductDataGridView
             // 
-            this.ProdutDataGridView.AllowUserToAddRows = false;
-            this.ProdutDataGridView.AllowUserToDeleteRows = false;
-            this.ProdutDataGridView.AllowUserToResizeColumns = false;
-            this.ProdutDataGridView.AllowUserToResizeRows = false;
-            this.ProdutDataGridView.AutoGenerateColumns = false;
-            this.ProdutDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.ProdutDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.ProdutDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProdutDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductDataGridView.AllowUserToAddRows = false;
+            this.ProductDataGridView.AllowUserToDeleteRows = false;
+            this.ProductDataGridView.AllowUserToResizeColumns = false;
+            this.ProductDataGridView.AllowUserToResizeRows = false;
+            this.ProductDataGridView.AutoGenerateColumns = false;
+            this.ProductDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.ProductDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.ProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productIDDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
             this.manufacturerDataGridViewTextBoxColumn,
@@ -136,14 +136,15 @@
             this.mousttypeDataGridViewTextBoxColumn,
             this.powerDataGridViewTextBoxColumn,
             this.webcamDataGridViewTextBoxColumn});
-            this.ProdutDataGridView.DataSource = this.productsBindingSource;
-            this.ProdutDataGridView.Location = new System.Drawing.Point(13, 53);
-            this.ProdutDataGridView.MultiSelect = false;
-            this.ProdutDataGridView.Name = "ProdutDataGridView";
-            this.ProdutDataGridView.ReadOnly = true;
-            this.ProdutDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProdutDataGridView.Size = new System.Drawing.Size(759, 435);
-            this.ProdutDataGridView.TabIndex = 4;
+            this.ProductDataGridView.DataSource = this.productsBindingSource;
+            this.ProductDataGridView.Location = new System.Drawing.Point(19, 47);
+            this.ProductDataGridView.MultiSelect = false;
+            this.ProductDataGridView.Name = "ProductDataGridView";
+            this.ProductDataGridView.ReadOnly = true;
+            this.ProductDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProductDataGridView.Size = new System.Drawing.Size(759, 435);
+            this.ProductDataGridView.TabIndex = 4;
+            this.ProductDataGridView.SelectionChanged += new System.EventHandler(this.ProdutDataGridView_SelectionChanged);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -425,7 +426,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
             this.Controls.Add(this.ProductSelectionLable);
-            this.Controls.Add(this.ProdutDataGridView);
+            this.Controls.Add(this.ProductDataGridView);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.NextButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -436,7 +437,7 @@
             this.Text = "Dollar Store - Select Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectForm_FormClosing);
             this.Load += new System.EventHandler(this.SelectForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ProdutDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -448,7 +449,7 @@
 
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button NextButton;
-        private System.Windows.Forms.DataGridView ProdutDataGridView;
+        private System.Windows.Forms.DataGridView ProductDataGridView;
         private System.Windows.Forms.Label ProductSelectionLable;
         private DollarComputersDataSet dollarComputersDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;

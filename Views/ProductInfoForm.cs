@@ -50,5 +50,26 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
             Program.selectForm.Show();
             this.Hide();
         }
+
+
+        private void ProductInfoForm_Activated(object sender, EventArgs e)
+        {
+            ProductIdTextBox.Text = Program.product.productID.ToString();
+            CostTextBox.Text = Program.product.cost.ToString();
+            ManufacturerTextBox.Text = Program.product.manufacturer.ToString();
+            ConditionTextBox.Text = Program.product.condition.ToString();
+            PlatformTextBox.Text = Program.product.platform.ToString();
+            OSTextBox.Text = Program.product.OS.ToString();
+            ModelTextBox.Text = Program.product.model.ToString();
+            MemoryTextBox.Text = Program.product.RAM_size.ToString();
+            LCDSizeTextBox.Text = Program.product.screensize.ToString();
+            HDDTextBox.Text = Program.product.HDD_size.ToString();
+            CPUBrandTextBox.Text = Program.product.CPU_brand.ToString();
+            CPUNumberTextBox.Text = Program.product.CPU_number.ToString();
+            GPUTypeTextBox.Text = Program.product.GPU_Type.ToString();
+            CPUTypeTextBox.Text = Program.product.CPU_type.ToString();
+            CPUSpeedTextBox.Text = Program.product.CPU_speed.ToString();
+            WebcamTextBox.Text = Program.product.webcam.ToString();
+        }
     }
 }

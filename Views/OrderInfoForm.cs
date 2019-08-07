@@ -13,6 +13,7 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
 {
     public partial class OrderInfoForm : Form
     {
+        const decimal SALETAX = 0.13m;
         public OrderInfoForm()
         {
             InitializeComponent();
@@ -31,6 +32,8 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Thank you for buying from us. \nYou will soon receive an email with detailed information about your order.",
+                        "Order placed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Program.startForm.Show();
             this.Hide();
         }
@@ -44,6 +47,27 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
         {
             ProductPrintForm.PrintAction = PrintAction.PrintToPreview;
             ProductPrintForm.Print();
+        }
+
+        private void OrderInfoForm_Activated(object sender, EventArgs e)
+        {
+            ManufacturerTextBox.Text = Program.product.manufacturer.ToString();
+            ConditionTextBox.Text = Program.product.condition.ToString();
+            PlatformTextBox.Text = Program.product.platform.ToString();
+            OSTextBox.Text = Program.product.OS.ToString();
+            ModelTextBox.Text = Program.product.model.ToString();
+            MemoryTextBox.Text = Program.product.RAM_size.ToString();
+            LCDSizeTextBox.Text = Program.product.screensize.ToString();
+            HDDTextBox.Text = Program.product.HDD_size.ToString();
+            CPUBrandTextBox.Text = Program.product.CPU_brand.ToString();
+            CPUNumberTextBox.Text = Program.product.CPU_number.ToString();
+            GPUTypeTextBox.Text = Program.product.GPU_Type.ToString();
+            CPUTypeTextBox.Text = Program.product.CPU_type.ToString();
+            CPUSpeedTextBox.Text = Program.product.CPU_speed.ToString();
+            WebCamTextBox.Text = Program.product.webcam.ToString();
+            PriceTextBox.Text = Program.product.cost.ToString();
+            SalesTaxTextBox.Text = (Program.product.cost * SALETAX).ToString();
+            TotalTextBox.Text = (Program.product.cost.Value * (1 + SALETAX)).ToString();
         }
     }
 }
