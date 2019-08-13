@@ -17,6 +17,7 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
         public static SelectForm selectForm;
         public static ProductInfoForm productInfoForm;
         public static OrderInfoForm orderInfoForm;
+        public static AboutForm aboutForm;
 
         /// <summary>
         /// The main entry point for the application.
@@ -33,7 +34,7 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
             product = new Product();
             productInfoForm = new ProductInfoForm();
             orderInfoForm = new OrderInfoForm();
-
+            aboutForm = new AboutForm();
             Application.Run(splashScreen);
         }
     }

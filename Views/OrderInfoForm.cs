@@ -69,5 +69,10 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
             SalesTaxTextBox.Text = (Program.product.cost * SALETAX).ToString();
             TotalTextBox.Text = (Program.product.cost.Value * (1 + SALETAX)).ToString();
         }
+
+        private void AboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Program.aboutForm.ShowDialog();
+        }
     }
 }
