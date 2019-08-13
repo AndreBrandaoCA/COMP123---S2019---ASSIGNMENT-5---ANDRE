@@ -74,5 +74,11 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
         {
             Program.aboutForm.ShowDialog();
         }
+
+        private void BackToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Program.productInfoForm.Show();
+            this.Hide();
+        }
     }
 }

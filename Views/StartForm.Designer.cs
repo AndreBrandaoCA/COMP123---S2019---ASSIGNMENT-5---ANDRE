@@ -70,6 +70,7 @@
             this.LoadSavedOrderButton.TabIndex = 4;
             this.LoadSavedOrderButton.Text = "Load Saved Order";
             this.LoadSavedOrderButton.UseVisualStyleBackColor = true;
+            this.LoadSavedOrderButton.Click += new System.EventHandler(this.LoadSavedOrderButton_Click);
             // 
             // LogoPictureBox
             // 

@@ -32,5 +32,10 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
             Program.selectForm.Show();
             this.Hide();
         }
+
+        private void LoadSavedOrderButton_Click(object sender, EventArgs e)
+        {
+            ProductInfoForm.OpenToolStripMenuItem_Click(sender, e);
+        }
     }
 }

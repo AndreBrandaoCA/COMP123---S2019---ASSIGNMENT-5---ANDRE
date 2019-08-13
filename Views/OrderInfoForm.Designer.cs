@@ -652,8 +652,9 @@
             // 
             this.backToolStripMenuItem1.Name = "backToolStripMenuItem1";
             this.backToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.backToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.backToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.backToolStripMenuItem1.Text = "&Back";
+            this.backToolStripMenuItem1.Click += new System.EventHandler(this.BackToolStripMenuItem1_Click);
             // 
             // helpToolStripMenuItem
             // 
