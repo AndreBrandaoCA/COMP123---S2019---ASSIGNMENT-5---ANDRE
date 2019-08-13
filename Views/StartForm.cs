@@ -35,7 +35,8 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
 
         private void LoadSavedOrderButton_Click(object sender, EventArgs e)
         {
-            ProductInfoForm.OpenToolStripMenuItem_Click(sender, e);
+            Program.productInfoForm.OpenToolStripMenuItem_Click(sender, e);
+            Program.productInfoForm.Show();
         }
     }
 }

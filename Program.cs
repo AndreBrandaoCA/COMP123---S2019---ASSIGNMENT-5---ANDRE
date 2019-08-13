@@ -10,6 +10,9 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE
 {
     public static class Program
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static Product product;
 
         public static SplashScreen splashScreen;
