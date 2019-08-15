@@ -18,46 +18,63 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// This is the event handler for ProductInfoForm_FormClosing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            Program.startForm.Show();
-            this.Hide();
-        }
-
+        /// <summary>
+        /// This is the event handler for SelectAnotherProductButton_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectAnotherProductButton_Click(object sender, EventArgs e)
         {
             Program.selectForm.Show();
             this.Hide();
         }
-
+        /// <summary>
+        /// This is the event handler for NextButton_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.orderInfoForm.Show();
             this.Hide();
         }
-
+        /// <summary>
+        /// This is the event handler for ExitToolStripMenuItem_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// This is the event handler for SelectAnotherProductToolStripMenuItem1_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectAnotherProductToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Program.selectForm.Show();
             this.Hide();
         }
-
-
+        /// <summary>
+        /// This is the event handler for ProductInfoForm_Activated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductInfoForm_Activated(object sender, EventArgs e)
         {
             ProductIdTextBox.Text = Program.product.productID.ToString();
-            CostTextBox.Text = Program.product.cost.ToString();
+            CostTextBox.Text = String.Format("${0:0.00}", Program.product.cost);
             ManufacturerTextBox.Text = Program.product.manufacturer.ToString();
             ConditionTextBox.Text = Program.product.condition.ToString();
             PlatformTextBox.Text = Program.product.platform.ToString();
@@ -73,11 +90,15 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
             CPUSpeedTextBox.Text = Program.product.CPU_speed.ToString();
             WebcamTextBox.Text = Program.product.webcam.ToString();
         }
-
+        /// <summary>
+        /// This is the event handler for OpenToolStripMenuItem_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // configure the file dialog
-            ProductInfoOpenFileDialog.FileName = "ProductInfo.txt";
+            ProductInfoOpenFileDialog.FileName = "Product.txt";
             ProductInfoOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             ProductInfoOpenFileDialog.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
 
@@ -148,11 +169,15 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
                 }
             }
         }
-
+        /// <summary>
+        /// This is the event handler for SaveToolStripMenuItem_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // configure the file dialog
-            ProductInfoSaveFileDialog.FileName = "ProductInfo.txt";
+            ProductInfoSaveFileDialog.FileName = "Product.txt";
             ProductInfoSaveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             ProductInfoSaveFileDialog.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
 

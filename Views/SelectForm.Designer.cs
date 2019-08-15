@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectForm));
             this.CancelButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.ProductDataGridView = new System.Windows.Forms.DataGridView();
@@ -67,6 +68,8 @@
             this.dollarComputersDataSet = new COMP123___S2019___ASSIGNMENT_5___ANDRE.DollarComputersDataSet();
             this.ProductSelectionLable = new System.Windows.Forms.Label();
             this.productsTableAdapter = new COMP123___S2019___ASSIGNMENT_5___ANDRE.DollarComputersDataSetTableAdapters.productsTableAdapter();
+            this.SelectionLabel = new System.Windows.Forms.Label();
+            this.SelectedProductLabel = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputersDataSet)).BeginInit();
@@ -142,8 +145,9 @@
             this.ProductDataGridView.Name = "ProductDataGridView";
             this.ProductDataGridView.ReadOnly = true;
             this.ProductDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductDataGridView.Size = new System.Drawing.Size(759, 435);
+            this.ProductDataGridView.Size = new System.Drawing.Size(759, 402);
             this.ProductDataGridView.TabIndex = 4;
+            this.ProductDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDataGridView_CellDoubleClick);
             this.ProductDataGridView.SelectionChanged += new System.EventHandler(this.ProdutDataGridView_SelectionChanged);
             // 
             // productIDDataGridViewTextBoxColumn
@@ -418,6 +422,26 @@
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
             // 
+            // SelectionLabel
+            // 
+            this.SelectionLabel.BackColor = System.Drawing.Color.LightGray;
+            this.SelectionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectionLabel.Location = new System.Drawing.Point(19, 461);
+            this.SelectionLabel.Name = "SelectionLabel";
+            this.SelectionLabel.Size = new System.Drawing.Size(97, 29);
+            this.SelectionLabel.TabIndex = 6;
+            this.SelectionLabel.Text = "Selection:";
+            this.SelectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // SelectedProductLabel
+            // 
+            this.SelectedProductLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedProductLabel.Location = new System.Drawing.Point(123, 461);
+            this.SelectedProductLabel.Name = "SelectedProductLabel";
+            this.SelectedProductLabel.ReadOnly = true;
+            this.SelectedProductLabel.Size = new System.Drawing.Size(655, 29);
+            this.SelectedProductLabel.TabIndex = 7;
+            // 
             // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,11 +449,14 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.SelectedProductLabel);
+            this.Controls.Add(this.SelectionLabel);
             this.Controls.Add(this.ProductSelectionLable);
             this.Controls.Add(this.ProductDataGridView);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.NextButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectForm";
@@ -485,5 +512,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mousttypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn powerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn webcamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label SelectionLabel;
+        private System.Windows.Forms.TextBox SelectedProductLabel;
     }
 }

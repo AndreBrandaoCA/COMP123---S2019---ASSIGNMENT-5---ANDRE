@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("COMP123 - S2019 - ASSIGNMENT 5 - ANDRE")]
-[assembly: AssemblyDescription("This is Assignment 5 from COMP123 @Centennial College")]
+[assembly: AssemblyDescription("Any inquiry please contact on +1(647)999 9999 or visit our website www.dollarstorecomputers.ca")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Centennial College")]
+[assembly: AssemblyCompany("Dollar Computers")]
 [assembly: AssemblyProduct("COMP123 - S2019 - ASSIGNMENT 5 - ANDRE")]
 [assembly: AssemblyCopyright("Copyright © Andre Brandao Teodoro 2019")]
 [assembly: AssemblyTrademark("")]

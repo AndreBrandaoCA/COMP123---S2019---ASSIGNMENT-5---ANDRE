@@ -18,24 +18,40 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// This is the event handler for SelectForm Closing Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// This is the event handler for Cancel Button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Program.startForm.Show();
             this.Hide();
         }
-
+        /// <summary>
+        /// This is the event handler for NextButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.productInfoForm.Show();
             this.Hide();
         }
-
+        /// <summary>
+        /// This is the event handler for SelectForm Load event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectForm_Load(object sender, EventArgs e)
         {
             using (var db = new ProductModel())
@@ -46,7 +62,11 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
             }
             NextButton.Enabled = false;
         }
-
+        /// <summary>
+        /// This is the event handler for Product Data Grid View Selection Changed event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProdutDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             Program.product.productID = short.Parse(ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
@@ -65,8 +85,18 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
             Program.product.CPU_type = ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[11].Value.ToString();
             Program.product.CPU_speed = ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[12].Value.ToString();
             Program.product.webcam = ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[30].Value.ToString();
-
+            Program.product.CPU_Class = ProductDataGridView.Rows[ProductDataGridView.CurrentCell.RowIndex].Cells[9].Value.ToString();
+            SelectedProductLabel.Text = Program.product.manufacturer + " - " + Program.product.model + " - $" + String.Format("{0:0.00}", Program.product.cost);
             NextButton.Enabled = true;
+        }
+        /// <summary>
+        /// This is the event handler for ProductDataGridView_CellDoubleClick
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProductDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            NextButton_Click(sender,e);
         }
     }
 }

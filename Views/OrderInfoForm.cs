@@ -13,42 +13,65 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
 {
     public partial class OrderInfoForm : Form
     {
-        const decimal SALETAX = 0.13m;
+        private const decimal _SALETAX = 0.13m;
         public OrderInfoForm()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// This is the event handler for 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// This is the event handler for 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Program.selectForm.Show();
             this.Hide(); 
         }
-
+        /// <summary>
+        /// This is the event handler for FinishButton_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thank you for buying from us. \nYou will soon receive an email with detailed information about your order.",
+            MessageBox.Show("Thank you for buying with us. \n\nYour order will be processed in the next 7-10 business days.",
                         "Order placed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Program.startForm.Show();
-            this.Hide();
+            Application.Exit();
         }
-
+        /// <summary>
+        /// This is the event handler for ExitToolStripMenuItem_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// This is the event handler for PrintToolStripMenuItem_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProductPrintForm.PrintAction = PrintAction.PrintToPreview;
-            ProductPrintForm.Print();
+            MessageBox.Show("Your form was sent to the printer", "Printing...",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
+        /// <summary>
+        /// This is the event handler for OrderInfoForm_Activated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderInfoForm_Activated(object sender, EventArgs e)
         {
             ManufacturerTextBox.Text = Program.product.manufacturer.ToString();
@@ -65,16 +88,24 @@ namespace COMP123___S2019___ASSIGNMENT_5___ANDRE.Views
             CPUTypeTextBox.Text = Program.product.CPU_type.ToString();
             CPUSpeedTextBox.Text = Program.product.CPU_speed.ToString();
             WebCamTextBox.Text = Program.product.webcam.ToString();
-            PriceTextBox.Text = Program.product.cost.ToString();
-            SalesTaxTextBox.Text = (Program.product.cost * SALETAX).ToString();
-            TotalTextBox.Text = (Program.product.cost.Value * (1 + SALETAX)).ToString();
+            PriceTextBox.Text = String.Format("${0:0.00}", Program.product.cost);
+            SalesTaxTextBox.Text = String.Format("${0:0.00}", (Program.product.cost * _SALETAX));
+            TotalTextBox.Text = String.Format("${0:0.00}", (Program.product.cost.Value * (1 + _SALETAX)));
         }
-
+        /// <summary>
+        /// This is the event handler for AboutToolStripMenuItem1_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Program.aboutForm.ShowDialog();
         }
-
+        /// <summary>
+        /// This is the event handler for BackToolStripMenuItem1_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Program.productInfoForm.Show();
